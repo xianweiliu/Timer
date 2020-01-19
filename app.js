@@ -23,19 +23,32 @@ class Timer {
     };
     // a countDown function
     countDown = () => {
-        // stored a convered number from the input value
-        const timeRemaining = parseFloat(this.durationInput.value);
-        // and updates the value by -1
-        this.durationInput.value = timeRemaining - 1;
-        // check if the timer has reach to 0
-        if (this.durationInput.value == 0) return this.pause();
+        // check if the currTime if less or equal to 0
+        if (this.currTime <= 0) {
+            // if it does, call pause
+            this.pause();
+        } else {
+            // calculates the time.
+            this.remainingTime = this.currTime - 1;
+        }
     };
+
+    // using get methods
+    // get value and parse to float
+    get currTime() {
+        return parseFloat(this.durationInput.value);
+    }
+
+    // set the calculated value from the countDown() then set the time to the input!
+    set remainingTime(time) {
+        this.durationInput.value = time;
+    }
 }
 
 // select all the HTML elements that needed for the function
 const durationInput = document.querySelector("#duration");
 const startBtn = document.querySelector("#start");
 const pauseBtn = document.querySelector("#pause");
+
 // pass these selected HTML elements to the class
 const timer = new Timer(durationInput, startBtn, pauseBtn);
-// timer.start();
