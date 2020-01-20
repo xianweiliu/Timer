@@ -1,0 +1,54 @@
+* {
+    font: inherit;
+}
+body {
+    font-family: "Segoe UI", Roboto;
+}
+.dial {
+    height: 400px;
+    width: 400px;
+}
+
+.timer {
+    position: absolute;
+    display: inline-flex;
+    left: 38%;
+    bottom: 33%;
+}
+
+/* inputs and buttons */
+.timer input {
+    display: block;
+    border: none;
+    width: 240px;
+    font-size: 90px;
+    text-align: center;
+}
+
+.timer button {
+    border: none;
+    background-color: white;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.timer button:focus {
+    outline: none;
+}
+
+.timer input:focus {
+    outline: none;
+}
+
+/* svg */
+.controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
